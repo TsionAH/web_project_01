@@ -16,11 +16,5 @@
             "src": "/(.*)",
             "dest": "server.js"
         }
-    ],
-    "rewrites": [
-    {
-      "source": "/api/inngest",
-      "destination": "/backend/inngest/ingest.js"
-    }
-  ]
+    ]
 }
