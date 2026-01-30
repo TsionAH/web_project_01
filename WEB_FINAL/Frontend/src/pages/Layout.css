@@ -1,0 +1,86 @@
+.layout-container {
+    min-height: 100vh;
+    position: relative;
+}
+
+.main-content {
+    margin-left: 280px;
+    transition: margin-left 0.3s ease;
+    min-height: 100vh;
+    background-color: #f7fafc;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .main-content.sidebar-open {
+        margin-left: 250px;
+        position: fixed;
+        width: calc(100% - 250px);
+    }
+}
+
+/* Desktop only */
+@media (min-width: 769px) {
+    .sidebar-toggle-btn {
+        display: none;
+    }
+}
+
+/* Mobile toggle button */
+@media (max-width: 768px) {
+    .sidebar-toggle-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        z-index: 1001;
+        transition: all 0.3s ease;
+    }
+    
+    .sidebar-toggle-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+    }
+    
+    .toggle-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Animation for main content */
+.main-content {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ensure content area has proper padding */
+.main-content > * {
+    padding: 20px;
+    min-height: calc(100vh - 40px);
+}

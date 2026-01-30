@@ -1,0 +1,103 @@
+.chatbox {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #0f0f0f;
+    color: white;
+  }
+  
+  /* HEADER */
+  .chat-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border-bottom: 1px solid #1f1f1f;
+  }
+  
+  .chat-header img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+  }
+  
+  .chat-name {
+    font-weight: 600;
+  }
+  
+  .chat-username {
+    font-size: 13px;
+    color: #aaa;
+  }
+  
+  /* MESSAGES */
+  .chat-messages {
+    flex: 1;
+    padding: 14px;
+    overflow-y: auto;
+  }
+  
+  .chat-message {
+    max-width: 70%;
+    padding: 10px 14px;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .chat-message.sent {
+    background: #1d9bf0;
+    margin-left: auto;
+  }
+  
+  .chat-message.received {
+    background: #1f1f1f;
+  }
+  
+  .chat-message img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 5px;
+  }
+  
+  /* INPUT */
+  .chat-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-top: 1px solid #1f1f1f;
+  }
+  
+  .chat-input input {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background: #1a1a1a;
+    color: white;
+  }
+  
+  /* IMAGE */
+  .image-upload {
+    cursor: pointer;
+  }
+  
+  .image-upload img {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+  
+  /* SEND BUTTON */
+  .chat-input button {
+    background: #1d9bf0;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+  }
+  

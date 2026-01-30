@@ -1,0 +1,106 @@
+/* ===== Menu Items Container ===== */
+.menu-items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+/* ===== Individual Menu Item ===== */
+.menu-item {
+    text-decoration: none; /* remove link underline */
+    color: #4a5568;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    margin: 5px 15px;
+    opacity: 0; /* for slide-in animation */
+    transform: translateX(-10px);
+    animation: slideIn 0.3s ease forwards;
+}
+
+/* ===== Hover Effect ===== */
+.menu-item:hover {
+    background-color: #edf2f7;
+    color: #2d3748;
+    transform: translateX(5px);
+}
+
+/* ===== Active / Selected Menu Item ===== */
+.menu-item.active {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* ===== Content Inside Menu Item ===== */
+.menu-item-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.menu-icon {
+    width: 20px;      /* desktop default size */
+    height: 20px;
+    min-width: 20px;  /* make sure it doesn't collapse */
+    min-height: 20px;
+    stroke-width: 2;
+    flex-shrink: 0;   /* prevent shrinking in flex container */
+}
+
+.menu-label {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* ===== Slide-in Animation ===== */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===== Staggered Animation for Each Item ===== */
+.menu-item:nth-child(1) { animation-delay: 0.1s; }
+.menu-item:nth-child(2) { animation-delay: 0.2s; }
+.menu-item:nth-child(3) { animation-delay: 0.3s; }
+.menu-item:nth-child(4) { animation-delay: 0.4s; }
+.menu-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 1023px) {
+    .menu-item {
+        margin: 5px 10px;
+        padding: 10px 15px;
+    }
+
+    .menu-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .menu-label {
+        font-size: 14px;
+    }
+}
+
+/* ===== Dark Mode ===== */
+@media (prefers-color-scheme: dark) {
+    .menu-item {
+        color: #e2e8f0;
+    }
+
+    .menu-item:hover {
+        background-color: #2d3748;
+        color: #edf2f7;
+    }
+
+    .menu-item.active {
+        background: linear-gradient(90deg, #5a67d8 0%, #6b46c1 100%);
+        color: white;
+    }
+}

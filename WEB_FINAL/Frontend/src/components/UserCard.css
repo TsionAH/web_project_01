@@ -1,0 +1,93 @@
+.user-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  
+  .user-card-header {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .user-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .user-info {
+    flex: 1;
+  }
+  
+  .user-name {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .user-username {
+    font-size: 13px;
+    color: #6b7280;
+  }
+  
+  .user-bio {
+    font-size: 14px;
+    color: #374151;
+    margin-top: 4px;
+  }
+  
+  .user-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #6b7280;
+  }
+  
+  .user-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .user-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .follow-btn {
+    flex: 1;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+  
+  .follow-btn:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+  }
+  
+  .connect-btn {
+    background: #f3f4f6;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .connect-btn:hover {
+    background: #e5e7eb;
+  }
+  

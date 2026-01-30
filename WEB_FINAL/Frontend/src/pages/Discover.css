@@ -1,0 +1,56 @@
+.discover-container {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* HEADER */
+  .discover-header h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1c1e21;
+  }
+  
+  .discover-header p {
+    margin: 3px 0 0;
+    font-size: 14px;
+    color: #65676b;
+  }
+  
+  /* SEARCH */
+  .discover-search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    border-radius: 12px;
+    max-width: 400px;
+  }
+  
+  .discover-search input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 14px;
+  }
+  
+  /* USERS LIST */
+  .users-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* LOADING */
+  .loading {
+    color: #1d9bf0;
+    font-weight: 500;
+    text-align: center;
+  }
+  

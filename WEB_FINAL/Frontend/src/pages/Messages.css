@@ -1,0 +1,100 @@
+.messages-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* HEADER */
+  .messages-header h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1c1e21;
+  }
+  
+  .messages-header p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #65676b;
+  }
+  
+  /* USERS LIST */
+  .messages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* MESSAGE CARD */
+  .message-card {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    gap: 12px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    transition: background 0.2s;
+  }
+  
+  .message-card:hover {
+    background: #f5f5f5;
+  }
+  
+  /* USER AVATAR */
+  .user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* USER INFO */
+  .user-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .user-name {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  .user-bio {
+    font-size: 13px;
+    color: #65676b;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  /* ACTION BUTTONS */
+  .message-actions {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .message-actions button {
+    background: #1d9bf0;
+    border: none;
+    color: #fff;
+    padding: 6px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  
+  .message-actions button:hover {
+    background: #0d8ddb;
+  }
+  
