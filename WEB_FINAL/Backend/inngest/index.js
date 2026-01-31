@@ -3,55 +3,50 @@ import User from "../models/User.js";
 
 export const inngest = new Inngest({ id: "aau_social" });
 
-// Your Inngest functions
 const syncUserCreation = inngest.createFunction(
-  { id: 'sync-user-from-clerk' },
-  { event: 'clerk/user.created' },
+  { id: "sync-user-from-clerk" },
+  { event: "clerk/user.created" },
   async ({ event }) => {
     const { id, first_name, last_name, email_addresses, image_url } = event.data;
-    let username = email_addresses[0].email.split('@')[0];
 
+    let username = email_addresses[0].email.split("@")[0];
     const user = await User.findOne({ username });
-    if (user) username = username + Math.floor(Math.random() * 1000);
+    if (user) username += Math.floor(Math.random() * 1000);
 
-    const userData = {
+    await User.create({
       _id: id,
       email: email_addresses[0].email,
-      full_name: first_name + ' ' + last_name,
+      full_name: `${first_name} ${last_name}`,
       profile_picture: image_url,
       username,
-    };
-    await User.create(userData);
+    });
   }
 );
 
 const syncUserUpdation = inngest.createFunction(
-  { id: 'update-user-from-clerk' },
-  { event: 'clerk/user.updated' },
+  { id: "update-user-from-clerk" },
+  { event: "clerk/user.updated" },
   async ({ event }) => {
     const { id, first_name, last_name, email_addresses, image_url } = event.data;
 
-    const updateedUserData = {
+    await User.findByIdAndUpdate(id, {
       email: email_addresses[0].email,
-      full_name: first_name + ' ' + last_name,
+      full_name: `${first_name} ${last_name}`,
       profile_picture: image_url,
-    };
-    await User.findByIdAndUpdate(id, updateedUserData);
+    });
   }
 );
 
 const syncUserDeletion = inngest.createFunction(
-  { id: 'delete-user-from-clerk' },
-  { event: 'clerk/user.deleted' }, // I noticed you had `clerk/user.updated` again — probably wrong
+  { id: "delete-user-from-clerk" },
+  { event: "clerk/user.deleted" },
   async ({ event }) => {
-    const { id } = event.data;
-    await User.findByIdAndDelete(id);
+    await User.findByIdAndDelete(event.data.id);
   }
 );
 
-export const functions = [syncUserCreation, syncUserUpdation, syncUserDeletion];
-
-// ✅ HTTP handler for testing or triggering
-export default async function handler(req, res) {
-  res.status(200).json({ message: "Inngest functions loaded!" });
-}
+export const functions = [
+  syncUserCreation,
+  syncUserUpdation,
+  syncUserDeletion,
+];
