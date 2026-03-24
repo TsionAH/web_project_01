@@ -1,9 +1,14 @@
 import express from "express";
 import { inngestHandler } from "./inngest/handler.js";
+import cors from 'cors'
+import 'dotenv/config'
+import connectDB from "./configs/db.js";
 
 const app = express();
+await connectDB();
 
 app.use(express.json());
+app.use(cors());
 
 // 🔥 THIS IS WHAT YOU WERE MISSING
 app.use("/api/inngest", inngestHandler);
